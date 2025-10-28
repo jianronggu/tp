@@ -134,8 +134,20 @@
         "editing-the-data-file": "Editing the data file",
         "faq": "FAQ",
         "known-issues": "Known issues",
+        "limitations": "Limitations",
         "command-summary": "Command summary",
-        "glossary": "Glossary"
+        "typical-workflow-of-a-treasurer-on-treasura": "Typical Workflow of a Treasurer on Treasura",
+        "1-a-new-semester-begins": "1. A New Semester Begins 🎓",
+        "2-archiving-old-members": "2. Archiving Old Members 📦",
+        "3-adding-new-members": "3. Adding New Members 👥",
+        "4-collecting-cca-shirt-payment": "4. Collecting CCA Shirt Payment 👕💰",
+        "5-checking-if-a-member-has-paid": "5. Checking if a Member Has Paid 🔍",
+        "6-finding-a-specific-payment": "6. Finding a Specific Payment 🧾",
+        "7-correcting-a-payment-error": "7. Correcting a Payment Error ✏️",
+        "8-fixing-a-new-mistake-undoing-an-edit": "8. Fixing a New Mistake — Undoing an Edit 😅",
+        "end-of-the-day": "✅ End of the Day",
+        "glossary": "Glossary",
+        "future-features-work-in-progress": "Future Features ( Work in Progress! )"
       },
       "headingKeywords": {}
     },
