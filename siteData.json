@@ -51,8 +51,10 @@
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
-        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
-        "proposed-data-archiving": "[Proposed] Data archiving",
+        "addmember-feature": "AddMember feature",
+        "archive-feature": "Archive feature",
+        "addpayment-feature": "AddPayment feature",
+        "viewpayment-feature": "ViewPayment feature",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
@@ -76,10 +78,7 @@
         "challenges-faced": "Challenges Faced",
         "effort-and-achievements": "Effort and Achievements",
         "reuse-and-efficiency": "Reuse and Efficiency",
-        "summary": "Summary",
-        "launch-and-shutdown": "Launch and shutdown",
-        "archiving-a-person": "Archiving a person",
-        "saving-data": "Saving data"
+        "summary": "Summary"
       },
       "headingKeywords": {}
     },
@@ -147,6 +146,7 @@
         "archiving-a-member-archive": "Archiving a Member: archive",
         "listing-archived-members-listarchived": "Listing Archived Members: listarchived",
         "unarchiving-a-member-unarchive": "Unarchiving a Member: unarchive",
+        "viewing-a-member-view": "Viewing a Member: view",
         "payment-management": "💰 Payment Management",
         "adding-a-payment-addpayment": "Adding a Payment: addpayment",
         "edit-payment-s-editpayment": "Edit payment(s): editpayment",

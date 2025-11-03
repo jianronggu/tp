@@ -4,30 +4,52 @@ skinparam arrowThickness 1.1
 skinparam arrowColor MODEL_COLOR
 skinparam classBackgroundColor MODEL_COLOR
 
-Package Model as ModelPackage <<Rectangle>>{
-Class "<<interface>>\nReadOnlyAddressBook" as ReadOnlyAddressBook
-Class "<<interface>>\nReadOnlyUserPrefs" as ReadOnlyUserPrefs
-Class "<<interface>>\nModel" as Model
-Class AddressBook
-Class ModelManager
-Class UserPrefs
+package Model as ModelPackage <<Rectangle>> {
+  class "<<interface>>\nReadOnlyAddressBook" as ReadOnlyAddressBook
+  class "<<interface>>\nReadOnlyUserPrefs" as ReadOnlyUserPrefs
+  class "<<interface>>\nModel" as Model
+  class AddressBook
+  class ModelManager
+  class UserPrefs
 
-Class UniquePersonList
-Class Person
-Class MatriculationNumber
-Class Email
-Class Name
-Class Phone
-Class Tag
+  ' Member-related classes
+  class UniquePersonList
+  class Person {
+    - name: Name
+    - phone: Phone
+    - email: Email
+    - matriculationNumber: MatriculationNumber
+    - tags: Set<Tag>
+    - payments: List<Payment>
+    - archived: boolean
+  }
+  class MatriculationNumber
+  class Email
+  class Name
+  class Phone
+  class Tag
 
-Class I #FFFFFF
+  ' Payment-related classes
+  class Payment {
+    - amount: Amount
+    - date: Date
+    - remarks: String
+    - recordedAt: LocalDateTime
+  }
+  class Amount
+  class Date
+  class Description
+  ' Removed UniquePaymentList (no longer needed as payments belong to Person)
+
+  class I #FFFFFF
 }
 
-Class HiddenOutside #FFFFFF
+' External stub to show package boundary
+class HiddenOutside #FFFFFF
 HiddenOutside ..> Model
 
+' Model relationships
 AddressBook .up.|> ReadOnlyAddressBook
-
 ModelManager .up.|> Model
 Model .right.> ReadOnlyUserPrefs
 Model .left.> ReadOnlyAddressBook
@@ -35,6 +57,7 @@ ModelManager -left-> "1" AddressBook
 ModelManager -right-> "1" UserPrefs
 UserPrefs .up.|> ReadOnlyUserPrefs
 
+' Member relationships
 AddressBook *--> "1" UniquePersonList
 UniquePersonList --> "~* all" Person
 Person *--> Name
@@ -43,12 +66,23 @@ Person *--> Email
 Person *--> MatriculationNumber
 Person *--> "*" Tag
 
+' Payment relationships
+Person *--> "*" Payment
+Payment *--> Amount
+Payment *--> Date
+Payment *--> Description
+
+' Visual alignment helpers
 Person -[hidden]up--> I
 UniquePersonList -[hidden]right-> I
+Payment -[hidden]right-> I
 
 Name -[hidden]right-> Phone
 Phone -[hidden]right-> MatriculationNumber
 MatriculationNumber -[hidden]right-> Email
+Email -[hidden]right-> Amount
+Amount -[hidden]right-> Date
 
 ModelManager --> "~* filtered" Person
+
 @enduml
